@@ -336,15 +336,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .sc-2 .service-card__bg::after { background: radial-gradient(ellipse at 70% 30%, #7AB4E0 0%, transparent 60%); }
 .sc-3 .service-card__bg::after { background: radial-gradient(ellipse at 50% 50%, #C9A84C 0%, transparent 60%); }
 .sc-4 .service-card__bg::after { background: radial-gradient(ellipse at 40% 60%, #80D4B4 0%, transparent 60%); }
-.gem-art { width:100%; height:180px; display:flex; align-items:center; justify-content:center; opacity:0.3; padding:20px; }
-.gem-art svg { width:80px; height:80px; }
+.gem-art { width:100%; height:200px; display:flex; align-items:center; justify-content:center; opacity:0.3; padding:20px; }
+.gem-art svg { width:90px; height:90px; }
 
 /* ============================
    COLLECTIONS
    ============================ */
 .collections-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:48px; flex-wrap:wrap; gap:20px; }
-.collections-grid { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,1fr); gap:12px; }
-.collection-card { position:relative; overflow:hidden; cursor:pointer; aspect-ratio:4/3; }
+.collections-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.collection-card { position:relative; overflow:hidden; cursor:pointer; aspect-ratio:2/3; }
 .collection-card__img { position:absolute; inset:0; width:100%; height:100%; }
 .cc-rings    { background:linear-gradient(145deg,#0D1E38 0%,#1A3060 50%,#0D1E38 100%); width:100%; height:100%; position:relative; }
 .cc-necklaces{ background:linear-gradient(145deg,#1A2A0A 0%,#2A4A14 50%,#1A2A0A 100%); width:100%; height:100%; position:relative; }
@@ -352,12 +352,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .cc-bracelets{ background:linear-gradient(145deg,#0A2A2A 0%,#0E3E3E 50%,#0A2A2A 100%); width:100%; height:100%; position:relative; }
 .cc-gold     { background:linear-gradient(145deg,#2A1E08 0%,#4A3410 50%,#2A1E08 100%); width:100%; height:100%; position:relative; }
 .cc-custom   { background:linear-gradient(145deg,#0A1E2A 0%,#103044 50%,#0A1E2A 100%); width:100%; height:100%; position:relative; }
-.cc-gem-center { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0.25; }
-.collection-card__overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:28px; background:linear-gradient(0deg,rgba(11,21,37,0.88) 0%,rgba(11,21,37,0.2) 55%,transparent 100%); transition:background 0.4s ease; }
-.collection-card:hover .collection-card__overlay { background:linear-gradient(0deg,rgba(11,21,37,0.94) 0%,rgba(11,21,37,0.45) 65%,rgba(11,21,37,0.08) 100%); }
-.collection-card__label { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-light); margin-bottom:6px; font-weight:400; }
-.collection-card__title { font-family:var(--ff-serif); font-size:30px; font-weight:300; color:var(--white); line-height:1.15; }
-.collection-card__cta { display:flex; align-items:center; gap:6px; margin-top:10px; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold-light); opacity:0; transform:translateY(8px); transition:all 0.35s ease; }
+/* Combined: earrings (mauve) → bracelet (teal) diagonal gradient */
+.cc-earrings-bracelets { background:linear-gradient(135deg,#2A0A20 0%,#3C1030 28%,#1C1E2E 54%,#0A2A2A 100%); width:100%; height:100%; position:relative; }
+.cc-gem-center { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0.28; }
+.collection-card__overlay { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:36px 32px; background:linear-gradient(0deg,rgba(11,21,37,0.9) 0%,rgba(11,21,37,0.25) 50%,transparent 100%); transition:background 0.4s ease; }
+.collection-card:hover .collection-card__overlay { background:linear-gradient(0deg,rgba(11,21,37,0.96) 0%,rgba(11,21,37,0.5) 65%,rgba(11,21,37,0.1) 100%); }
+.collection-card__label { font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold-light); margin-bottom:8px; font-weight:400; }
+.collection-card__title { font-family:var(--ff-serif); font-size:34px; font-weight:300; color:var(--white); line-height:1.12; }
+.collection-card__cta { display:flex; align-items:center; gap:6px; margin-top:12px; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold-light); opacity:0; transform:translateY(8px); transition:all 0.35s ease; }
 .collection-card:hover .collection-card__cta { opacity:1; transform:translateY(0); }
 .collection-card__cta svg { width:14px; height:14px; }
 
@@ -788,7 +790,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    ============================ */
 @media (max-width: 1100px) {
   .services-grid { grid-template-columns:repeat(2,1fr); }
-  .collections-grid { grid-template-columns:repeat(2,1fr); }
+  .collections-grid { grid-template-columns:repeat(3,1fr); gap:12px; }
   .footer-grid { grid-template-columns:1fr 1fr; gap:36px; }
   .expertise-grid { grid-template-columns:repeat(2,1fr); }
 }
@@ -824,6 +826,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .reviews-header__left { justify-content:center; }
   .reviews-header__text { align-items:center; text-align:center; }
   .gold-strip { grid-template-columns:repeat(3,1fr); }
+  /* 3 portrait cards — slightly tighter on tablet */
+  .collections-grid { grid-template-columns:repeat(3,1fr); gap:10px; }
+  .collection-card { aspect-ratio:3/4; }
 }
 @media (max-width: 600px) {
   :root { --bar-h:36px; }
@@ -837,7 +842,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .btn { padding:12px 22px; }
   .services-grid { grid-template-columns:1fr; gap:16px; }
   .service-card { aspect-ratio:4/3; }
-  .collections-grid { grid-template-columns:1fr; }
+  .collections-grid { grid-template-columns:1fr; gap:12px; }
+  .collection-card { aspect-ratio:3/2; }
   .expertise-grid { grid-template-columns:1fr; }
   .heritage__stats { grid-template-columns:repeat(3,1fr); gap:16px; }
   .heritage__content { padding:36px 22px; }
@@ -895,7 +901,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     <div class="nav-item">
       <button aria-haspopup="true">Collections <svg class="nav-arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5"/></svg></button>
       <div class="dropdown dropdown--wide">
-        <div class="dropdown-col"><h4>By Type</h4><ul><li><a href="#collections">Rings &amp; Bands</a></li><li><a href="#collections">Necklaces</a></li><li><a href="#collections">Earrings</a></li><li><a href="#collections">Bracelets</a></li><li><a href="#engagement">Engagement Rings</a></li></ul></div>
+        <div class="dropdown-col"><h4>By Type</h4><ul><li><a href="#collections">Rings &amp; Bands</a></li><li><a href="#collections">Necklaces &amp; Earrings</a></li><li><a href="#collections">Watches &amp; Bracelets</a></li><li><a href="#engagement">Engagement Rings</a></li></ul></div>
         <div class="dropdown-col"><h4>By Metal</h4><ul><li><a href="#about">10K Gold</a></li><li><a href="#about">14K Gold</a></li><li><a href="#about">18K Gold</a></li><li><a href="#collections">Diamonds</a></li><li><a href="#collections">Gemstones</a></li></ul></div>
         <div class="dropdown-col"><h4>Specialty</h4><ul><li><a href="#engagement">Custom Design</a></li><li><a href="#collections">Bridal Sets</a></li><li><a href="#collections">Pearls &amp; Silver</a></li><li><a href="#collections">Platinum</a></li></ul></div>
       </div>
@@ -1105,29 +1111,81 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
       <a href="#" class="btn btn-outline-white fr fr-d2">View All Jewelry</a>
     </div>
     <div class="collections-grid">
+      <!-- Card 1: Rings & Bands -->
       <div class="collection-card fr fr-d1">
-        <div class="collection-card__img"><div class="cc-rings"><div class="cc-gem-center"><svg viewBox="0 0 100 100" width="100" height="100" fill="none"><circle cx="50" cy="50" r="34" stroke="#C9A84C" stroke-width="1.5" fill="none"/><circle cx="50" cy="50" r="22" stroke="#C9A84C" stroke-width="0.8" fill="none"/><polygon points="50,28 62,44 50,60 38,44" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="1.2"/></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">Most Popular</div><div class="collection-card__title">Rings &amp; Bands</div><div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="collection-card__img">
+          <div class="cc-rings">
+            <div class="cc-gem-center">
+              <svg viewBox="0 0 120 120" width="120" height="120" fill="none">
+                <circle cx="60" cy="60" r="42" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="60" cy="60" r="28" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+                <circle cx="60" cy="60" r="14" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+                <polygon points="60,34 74,52 60,70 46,52" fill="rgba(201,168,76,0.14)" stroke="#C9A84C" stroke-width="1.2"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="collection-card__overlay">
+          <div class="collection-card__label">Most Popular</div>
+          <div class="collection-card__title">Rings &amp; Bands</div>
+          <div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
       </div>
+      <!-- Card 2: Necklaces & Earrings -->
       <div class="collection-card fr fr-d2">
-        <div class="collection-card__img"><div class="cc-necklaces"><div class="cc-gem-center"><svg viewBox="0 0 80 80" width="80" height="80" fill="none"><path d="M40 12 Q58 28 40 56 Q22 28 40 12Z" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/><circle cx="40" cy="58" r="5" stroke="#C9A84C" stroke-width="1" fill="rgba(201,168,76,0.2)"/></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">Fine Jewelry</div><div class="collection-card__title">Necklaces</div><div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="collection-card__img">
+          <div class="cc-necklaces">
+            <div class="cc-gem-center">
+              <svg viewBox="0 0 130 110" width="130" height="110" fill="none">
+                <!-- Necklace pendant (left) -->
+                <path d="M38 14 Q56 34 38 68 Q20 34 38 14Z" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/>
+                <circle cx="38" cy="72" r="6" stroke="#C9A84C" stroke-width="1.2" fill="rgba(201,168,76,0.22)"/>
+                <!-- Divider -->
+                <line x1="65" y1="10" x2="65" y2="100" stroke="rgba(201,168,76,0.18)" stroke-width="0.8"/>
+                <!-- Earring (right) -->
+                <circle cx="96" cy="24" r="6" fill="rgba(201,168,76,0.28)" stroke="#C9A84C" stroke-width="1.2"/>
+                <ellipse cx="96" cy="56" rx="13" ry="20" stroke="#C9A84C" stroke-width="1.4" fill="rgba(201,168,76,0.07)"/>
+                <ellipse cx="96" cy="56" rx="7" ry="11" stroke="#C9A84C" stroke-width="0.7" fill="none"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="collection-card__overlay">
+          <div class="collection-card__label">Pendants · Studs · Drops</div>
+          <div class="collection-card__title">Necklaces &amp; Earrings</div>
+          <div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
       </div>
+      <!-- Card 3: Watches & Bracelets -->
       <div class="collection-card fr fr-d3">
-        <div class="collection-card__img"><div class="cc-earrings"><div class="cc-gem-center"><svg viewBox="0 0 80 80" width="80" height="80" fill="none"><ellipse cx="40" cy="42" rx="16" ry="24" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/><ellipse cx="40" cy="42" rx="9" ry="14" stroke="#C9A84C" stroke-width="0.8" fill="none"/><circle cx="40" cy="22" r="5" fill="rgba(201,168,76,0.25)" stroke="#C9A84C" stroke-width="1"/></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">Studs &amp; Drops</div><div class="collection-card__title">Earrings</div><div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-      </div>
-      <div class="collection-card fr fr-d2">
-        <div class="collection-card__img"><div class="cc-bracelets"><div class="cc-gem-center"><svg viewBox="0 0 80 80" width="80" height="80" fill="none"><circle cx="40" cy="40" r="26" stroke="#C9A84C" stroke-width="1.5" fill="none"/><circle cx="40" cy="40" r="18" stroke="#C9A84C" stroke-width="0.8" fill="none"/><circle cx="40" cy="14" r="3.5" fill="rgba(201,168,76,0.3)" stroke="#C9A84C" stroke-width="1"/></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">Gold &amp; Gemstone</div><div class="collection-card__title">Bracelets</div><div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-      </div>
-      <div class="collection-card fr fr-d3">
-        <div class="collection-card__img"><div class="cc-gold"><div class="cc-gem-center"><svg viewBox="0 0 80 80" width="80" height="80" fill="none"><polygon points="40,8 70,26 70,54 40,72 10,54 10,26" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.07)"/><polygon points="40,18 60,30 60,50 40,62 20,50 20,30" stroke="#C9A84C" stroke-width="0.8" fill="none"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="rgba(201,168,76,0.55)" font-family="Georgia,serif">Au</text></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">10K · 14K · 18K</div><div class="collection-card__title">Fine Gold</div><div class="collection-card__cta">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-      </div>
-      <div class="collection-card fr fr-d4" id="engagement">
-        <div class="collection-card__img"><div class="cc-custom"><div class="cc-gem-center"><svg viewBox="0 0 80 80" width="80" height="80" fill="none"><polygon points="40,8 52,32 78,40 52,48 40,72 28,48 2,40 28,32" fill="rgba(201,168,76,0.05)" stroke="#C9A84C" stroke-width="1"/><circle cx="40" cy="40" r="8" fill="rgba(201,168,76,0.18)" stroke="#C9A84C" stroke-width="1.5"/><circle cx="40" cy="40" r="4" fill="rgba(201,168,76,0.35)" stroke="none"/></svg></div></div></div>
-        <div class="collection-card__overlay"><div class="collection-card__label">Bridal &amp; Custom</div><div class="collection-card__title">Engagement Rings</div><div class="collection-card__cta">Design Yours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="collection-card__img">
+          <div class="cc-bracelets">
+            <div class="cc-gem-center">
+              <svg viewBox="0 0 130 110" width="130" height="110" fill="none">
+                <!-- Watch face (left) -->
+                <rect x="14" y="30" width="44" height="52" rx="8" stroke="#C9A84C" stroke-width="1.5" fill="rgba(201,168,76,0.06)"/>
+                <rect x="22" y="38" width="28" height="36" rx="4" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+                <line x1="36" y1="46" x2="36" y2="56" stroke="#C9A84C" stroke-width="1.2"/>
+                <line x1="36" y1="56" x2="43" y2="56" stroke="#C9A84C" stroke-width="1"/>
+                <circle cx="36" cy="56" r="2" fill="rgba(201,168,76,0.5)"/>
+                <rect x="24" y="22" width="24" height="8" rx="3" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/>
+                <rect x="24" y="82" width="24" height="8" rx="3" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.08)"/>
+                <!-- Divider -->
+                <line x1="65" y1="10" x2="65" y2="100" stroke="rgba(201,168,76,0.18)" stroke-width="0.8"/>
+                <!-- Bracelet (right) -->
+                <circle cx="96" cy="56" r="30" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                <circle cx="96" cy="56" r="21" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+                <circle cx="96" cy="26" r="4.5" fill="rgba(201,168,76,0.32)" stroke="#C9A84C" stroke-width="1"/>
+                <circle cx="122" cy="44" r="3" fill="rgba(201,168,76,0.2)" stroke="#C9A84C" stroke-width="0.8"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="collection-card__overlay">
+          <div class="collection-card__label">Timepieces · Gold · Gemstone</div>
+          <div class="collection-card__title">Watches &amp; Bracelets</div>
+          <div class="collection-card__cta">Shop Now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1520,10 +1578,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
         <h4>Collections</h4>
         <ul>
           <li><a href="#collections">Rings &amp; Bands</a></li>
-          <li><a href="#collections">Necklaces &amp; Pendants</a></li>
-          <li><a href="#collections">Earrings</a></li>
-          <li><a href="#collections">Bracelets</a></li>
-          <li><a href="#engagement">Engagement Rings</a></li>
+          <li><a href="#collections">Necklaces &amp; Earrings</a></li>
+          <li><a href="#collections">Watches &amp; Bracelets</a></li>
           <li><a href="#about">10K · 14K · 18K Gold</a></li>
           <li><a href="#collections">Diamonds &amp; Gems</a></li>
           <li><a href="#collections">Pearls &amp; Silver</a></li>
